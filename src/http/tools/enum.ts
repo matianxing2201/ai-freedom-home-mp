@@ -2,6 +2,7 @@ export enum ResultEnum {
   // 0和200当做成功都很普遍，这里直接兼容两者（PS：0和200通常都不会当做错误码，但是有的接口会返回0，有的接口会返回200）
   Success0 = 0, // 成功
   Success200 = 200, // 成功
+  Success00000 = '00000', // 成功，业务逻辑成功
   Error = 400, // 错误
   Unauthorized = 401, // 未授权
   Forbidden = 403, // 禁止访问（原为forbidden）
@@ -14,6 +15,7 @@ export enum ResultEnum {
   ServiceUnavailable = 503, // 服务不可用（原为serviceUnavailable）
   GatewayTimeout = 504, // 网关超时（原为gatewayTimeout）
   HttpVersionNotSupported = 505, // HTTP版本不支持（原为httpVersionNotSupported）
+
 }
 export enum ContentTypeEnum {
   JSON = 'application/json;charset=UTF-8',

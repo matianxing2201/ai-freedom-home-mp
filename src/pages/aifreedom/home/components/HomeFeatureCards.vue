@@ -119,6 +119,6 @@ const emit = defineEmits<{
 .card-go {
   margin-top: auto;
   width: 84rpx;
-  height: 40rpx;
+  height: 100rpx;
 }
 </style>

@@ -26,8 +26,8 @@ function normalizeMediaUrl(url: string) {
   if (url.startsWith('http'))
     return url
   if (url.startsWith('/'))
-    return `${import.meta.env.VITE_SERVER_BASEURL}${url}`
-  return `${import.meta.env.VITE_SERVER_BASEURL}/${url}`
+    return `${import.meta.env.VITE_OSS_BASEURL}${url}`
+  return `${import.meta.env.VITE_OSS_BASEURL}/${url}`
 }
 
 export function useHomeLogic() {
@@ -105,7 +105,6 @@ export function useHomeLogic() {
         normalizeMediaUrl(data.existingRoomDesignUrl),
         normalizeMediaUrl(data.softFurnishingStyingUrl),
       ].filter(Boolean)
-
       if (urls.length) {
         videoUrls.value = urls
         enableVideo.value = true

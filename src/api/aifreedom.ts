@@ -1,4 +1,3 @@
-import { http } from '@/http/http'
 import type {
   AiIndexMaterialResp,
   AiLoginParams,
@@ -9,6 +8,7 @@ import type {
   SubmitTaskResp,
   TaskInfoResp,
 } from './types/aifreedom'
+import { http } from '@/http/http'
 
 export function aiLoginIn(params: AiLoginParams) {
   return http.post<AiLoginResp>('/app/login/loginIn', params)

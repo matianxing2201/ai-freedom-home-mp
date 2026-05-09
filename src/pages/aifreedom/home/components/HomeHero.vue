@@ -19,8 +19,10 @@ const emit = defineEmits<{
 
 const videoReady = ref(false)
 
-watch(() => props.currentVideoUrl, () => {
-  videoReady.value = false
+watch(() => props.currentVideoUrl, (newUrl, oldUrl) => {
+  if (newUrl && newUrl !== oldUrl) {
+    videoReady.value = false
+  }
 })
 
 function onVideoLoaded() {

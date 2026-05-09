@@ -50,4 +50,4 @@ src/pages.json
 
 *.history
 *.vscode
-*.env
+env/

@@ -93,15 +93,15 @@ export function http<T>(options: CustomRequestOptions) {
         }
 
         // 处理其他成功状态（HTTP状态码200-299）
-        if (res.statusCode >= 200 && res.statusCode < 300) {
-          // 处理业务逻辑错误
-          if (code !== ResultEnum.Success0 && code !== ResultEnum.Success200) {
-            uni.showToast({
-              icon: 'none',
-              title: responseData.msg || responseData.message || '请求错误',
-            })
-            return reject(responseData.data)
-          }
+        if (code === ResultEnum.Success00000) {
+          // // 处理业务逻辑错误
+          // if (code !== ResultEnum.Success0 && code !== ResultEnum.Success200) {
+          //   uni.showToast({
+          //     icon: 'none',
+          //     title: responseData.msg || responseData.message || '请求错误',
+          //   })
+          //   return reject(responseData.data)
+          // }
           return resolve(responseData.data)
         }
 

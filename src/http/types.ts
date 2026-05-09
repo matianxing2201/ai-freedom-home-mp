@@ -17,12 +17,12 @@ export interface HttpRequestResult<T> {
 
 // 通用响应格式（兼容 msg + message 字段）
 export type IResponse<T = any> = {
-  code: number
+  code: string | number
   data: T
   message: string
   [key: string]: any // 允许额外属性
 } | {
-  code: number
+  code: string | number
   data: T
   msg: string
   [key: string]: any // 允许额外属性
