@@ -17,13 +17,13 @@ const {
   title,
   subtitle,
   enableVideo,
-  currentVideoUrl,
+  videoUrls,
   leftCard,
   rightCards,
   openTask,
   tryNow,
   openSettings,
-  playNext,
+  onHeroIndexChange,
   onVideoError,
 } = useHomeLogic()
 </script>
@@ -33,12 +33,12 @@ const {
     <HomeHero
       :poster="poster"
       :enable-video="enableVideo"
-      :current-video-url="currentVideoUrl"
+      :video-urls="videoUrls"
       :title="title"
       :subtitle="subtitle"
       @setting-tap="openSettings"
       @try-tap="tryNow"
-      @ended="playNext"
+      @index-change="onHeroIndexChange"
       @error="onVideoError"
     />
 

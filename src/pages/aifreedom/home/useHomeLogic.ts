@@ -38,7 +38,6 @@ export function useHomeLogic() {
   const isLoadingVideos = ref(false)
   const enableVideo = ref(false)
 
-  const currentVideoUrl = computed(() => videoUrls.value[currentMediaIndex.value] || '')
   const title = computed(() => TITLE_MAP[currentMediaIndex.value] || '房屋设计')
   const subtitle = computed(() => SUBTITLE_MAP[currentMediaIndex.value] || '定制百变风格  一键生成效果图')
 
@@ -83,14 +82,15 @@ export function useHomeLogic() {
     })
   }
 
-  const playNext = () => {
+  const onHeroIndexChange = (index: number) => {
     if (!videoUrls.value.length)
       return
-    currentMediaIndex.value = (currentMediaIndex.value + 1) % videoUrls.value.length
+    currentMediaIndex.value = index % videoUrls.value.length
   }
 
   const onVideoError = () => {
-    playNext()
+    // 子组件内部会自动切下一个视频，这里只做日志兜底。
+    console.warn('首页视频播放异常，已尝试自动切换')
   }
 
   const loadVideoUrls = async () => {
@@ -124,16 +124,16 @@ export function useHomeLogic() {
 
   return {
     poster,
+    videoUrls,
     title,
     subtitle,
     enableVideo,
-    currentVideoUrl,
     leftCard,
     rightCards,
     openTask,
     tryNow,
     openSettings,
-    playNext,
+    onHeroIndexChange,
     onVideoError,
   }
 }
