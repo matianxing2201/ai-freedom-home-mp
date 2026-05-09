@@ -184,5 +184,10 @@
   "resolutions": {
     "bin-wrapper": "npm:bin-wrapper-china",
     "unconfig": "7.3.2"
+  },
+  "lint-staged": {
+    "*.{js,ts,vue}": [
+      "eslint --fix"
+    ]
   }
 }
