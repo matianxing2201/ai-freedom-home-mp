@@ -171,6 +171,8 @@
     "vite": "5.2.8",
     "vite-plugin-restart": "^1.0.0",
     "vite-plugin-vue-devtools": "^8.0.5",
+    "vitepress": "^1.6.4",
+    "vitepress-plugin-llms": "^1.12.2",
     "vue-tsc": "^3.0.6"
   },
   "pnpm": {
