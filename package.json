@@ -187,6 +187,7 @@
     "bin-wrapper": "npm:bin-wrapper-china",
     "unconfig": "7.3.2"
   },
+  "_lint-staged-note": "git pre-commit 钩子配置：对暂存的 js/ts/vue 文件自动执行 eslint --fix",
   "lint-staged": {
     "*.{js,ts,vue}": [
       "eslint --fix"
