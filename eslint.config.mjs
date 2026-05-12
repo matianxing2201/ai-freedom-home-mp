@@ -42,6 +42,39 @@ export default uniHelper({
     'vue/block-order': ['error', {
       order: [['script', 'template'], 'style'],
     }],
+    // 允许使用双引号或单引号
+    'style/quotes': 'off',
+    'quotes': 'off',
+    '@stylistic/quotes': 'off',
+    // 允许使用分号
+    'style/semi': 'off',
+    'semi': 'off',
+    '@stylistic/semi': 'off',
+    // 箭头函数参数括号规则：允许省略单个参数的括号
+    'style/arrow-parens': 'off',
+    'arrow-parens': 'off',
+    '@stylistic/arrow-parens': 'off',
+    // 操作符换行规则：允许放在行尾或行首
+    'style/operator-linebreak': 'off',
+    'operator-linebreak': 'off',
+    '@stylistic/operator-linebreak': 'off',
+    // 禁用所有 stylic 规则
+    '@stylistic/semi-spacing': 'off',
+    '@stylistic/quote-props': 'off',
+    // 禁用缩进检查
+    'vue/html-indent': 'off',
+    'indent': 'off',
+    '@stylistic/indent': 'off',
+    // 禁用 brace-style 规则（允许 if 后不换行，else 与 } 同行）
+    'brace-style': 'off',
+    '@stylistic/brace-style': 'off',
+    // 禁用 curly 规则（允许单行 if 不写花括号）
+    'curly': 'off',
+    // 禁用 antfu/if-newline 规则
+    'antfu/if-newline': 'off',
+    // 禁用 member-delimiter-style 规则（允许接口使用分号或逗号）
+    '@stylistic/member-delimiter-style': 'off',
+    'style/member-delimiter-style': 'off',
   },
   formatters: {
     /**

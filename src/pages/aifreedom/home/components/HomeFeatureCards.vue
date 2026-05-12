@@ -75,6 +75,10 @@ const emit = defineEmits<{
   position: relative;
 }
 
+.right-card:last-child {
+  margin-top: 10rpx;
+}
+
 .card-bg {
   position: absolute;
   inset: 0;

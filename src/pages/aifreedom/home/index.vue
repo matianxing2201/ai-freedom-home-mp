@@ -9,6 +9,7 @@ definePage({
   style: {
     navigationStyle: 'custom',
     navigationBarTitleText: 'AI自由家',
+    disableScroll: true,
   },
 })
 
@@ -31,16 +32,9 @@ const {
 <template>
   <view class="home-page">
     <HomeHero
-      :poster="poster"
-      :enable-video="enableVideo"
-      :video-urls="videoUrls"
-      :title="title"
-      :subtitle="subtitle"
-      @setting-tap="openSettings"
-      @try-tap="tryNow"
-      @index-change="onHeroIndexChange"
-      @error="onVideoError"
-    />
+:poster="poster" :enable-video="enableVideo" :video-urls="videoUrls" :title="title" :subtitle="subtitle"
+      @setting-tap="openSettings" @try-tap="tryNow" @index-change="onHeroIndexChange" @error="onVideoError"
+/>
 
     <HomeFeatureCards :left-card="leftCard" :right-cards="rightCards" @open="openTask" />
   </view>

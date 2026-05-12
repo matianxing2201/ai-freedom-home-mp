@@ -1,4 +1,5 @@
 import { aiIndexMaterialList } from '@/api/aifreedom'
+import { useRequireAuth } from '@/hooks/useRequireAuth'
 
 interface FeatureItem {
   key: number
@@ -31,7 +32,9 @@ function normalizeMediaUrl(url: string) {
 }
 
 export function useHomeLogic() {
-  const poster = ref('/static/aifreedom-assets/images/aifreedom/free_video_cover.png')
+  const { checkAuth } = useRequireAuth()
+
+  const poster = ref('/static/aifreedom-assets/images/aifreedom/free_video_cover.jpg')
 
   const videoUrls = ref<string[]>([])
   const currentMediaIndex = ref(0)
@@ -66,14 +69,20 @@ export function useHomeLogic() {
     },
   ])
 
+  // 打开任务页面（带登录检查，记录目标页面供登录后跳转）
   const openTask = (taskType: number) => {
-    uni.navigateTo({
-      url: `/pages/ai-renovation/upload/index?taskType=${taskType}`,
-    })
+    const targetUrl = `/pages/ai-renovation/upload/index?taskType=${taskType}`
+    checkAuth(() => {
+      uni.navigateTo({ url: targetUrl })
+    }, targetUrl)
   }
 
+  // 去试试按钮（带登录检查，记录目标页面供登录后跳转）
   const tryNow = () => {
-    openTask(currentMediaIndex.value)
+    const targetUrl = `/pages/ai-renovation/upload/index?taskType=${currentMediaIndex.value}`
+    checkAuth(() => {
+      uni.navigateTo({ url: targetUrl })
+    }, targetUrl)
   }
 
   const openSettings = () => {
